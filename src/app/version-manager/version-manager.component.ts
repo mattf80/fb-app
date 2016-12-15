@@ -1,3 +1,4 @@
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VersionManagerComponent implements OnInit {
 
-  constructor() { }
+  items: any[];
+
+  constructor(private af: AngularFire) { 
+   af.database.list('/versions')
+    .subscribe(data => {
+      console.log(data);
+      this.items = data;
+    })
+   
+  }
 
   ngOnInit() {
+    
   }
 
 }

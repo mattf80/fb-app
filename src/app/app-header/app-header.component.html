@@ -1,9 +1,9 @@
 <header class="header">
   <div class="row">
-    <div class="col-sm-6 offset-sm-3">
+    <div class="col-sm-9">
       <h2>PB Contingency Tracker</h2>
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-3">
       <div class="row">
         <button class="btn btn-success" (click)="checkAuthState()">Check auth status</button>
         <a *ngIf="authenticated" class="text-md-center" (click)="signOut.emit()" [routerLink]="['/']">Sign Out</a>
