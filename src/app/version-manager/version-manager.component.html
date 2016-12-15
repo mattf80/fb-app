@@ -3,5 +3,8 @@
 </p>
 
 <ul>
-  <li *ngFor="let item of items">{{item.$value}}</li>
+  <li *ngFor="let item of versions$ | async">{{item.$value}}</li>
 </ul>
+
+<button (click)="addItem('foo')">Add foo</button>
+
