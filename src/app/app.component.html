@@ -1,7 +1,4 @@
-<h1>
-  {{title}}
-</h1>
-<h2>This is a change to the site!</h2>
-
-
-    {{item?.$value}}
+<app-header [authenticated]="auth.authenticated" (signOut)="signOut()"></app-header>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

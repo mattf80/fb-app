@@ -1,5 +1,6 @@
+import { AuthService } from './login/auth.service';
 import { Component, OnInit } from '@angular/core';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
 
 import { Observable } from 'rxjs/Rx';
 
@@ -9,17 +10,11 @@ import { Observable } from 'rxjs/Rx';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
-  item: any;
 
-  constructor(af: AngularFire) {
 
-   af.database.object('/wines').subscribe(
-      wines => {
-        this.item = wines;
-    console.log(this.item);
-      }
-    )
+  constructor(private auth: AuthService) { }
 
+  signOut(): void {
+    this.auth.signOut();
   }
 }

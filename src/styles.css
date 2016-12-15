@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    background-color: #222;
+    color: #999;
+    font-family: 'aktiv-grotesk-std', Helvetica Neue, Arial, sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+}
