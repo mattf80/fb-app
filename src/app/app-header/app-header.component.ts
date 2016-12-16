@@ -13,15 +13,18 @@ export class AppHeaderComponent implements OnInit {
   @Input() authenticated: boolean;
   @Output() signOut = new EventEmitter(false);
 
+
+  id: string = '';
+  showAuthState: boolean = false;
+
   constructor(private auth: AuthService) { }
 
   ngOnInit() {
   }
 
     private checkAuthState() {
-    let authState = this.auth.authenticated;
-    let id = this.auth.id;
-    console.log(authState, id);
+      this.showAuthState = !this.showAuthState;
+      this.id = this.auth.id;
   }
 
 }

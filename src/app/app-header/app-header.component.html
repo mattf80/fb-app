@@ -8,6 +8,12 @@
         <button class="btn btn-success" (click)="checkAuthState()">Check auth status</button>
         <a *ngIf="authenticated" class="text-md-center" (click)="signOut.emit()" [routerLink]="['/']">Sign Out</a>
       </div>
+      <div *ngIf="showAuthState">
+        <p>Authenticated: {{authenticated}}</p>
+        <p>User Id: {{id}}</p>
+      </div>
     </div>
+
   </div>
+
 </header>
