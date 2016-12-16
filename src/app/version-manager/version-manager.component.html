@@ -1,5 +1,8 @@
 <h1>If you're authenticated you should see a list of exams below. If you're not you should never reach this page.</h1>
 
 <ul>
-  <li *ngFor="let item of items">{{item.$value}}</li>
+  <li *ngFor="let item of versions$ | async">{{item.$value}}</li>
 </ul>
+
+<button (click)="addItem('foo')">Add foo</button>
+
