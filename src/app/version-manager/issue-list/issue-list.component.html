@@ -1,0 +1,26 @@
+<ul>
+  <li *ngFor="let issue of issues$ | async">{{issue.exam}}</li>
+</ul>
+
+
+<table class="table table-inverse">
+  <thead>
+    <tr>
+      <th>Exam</th>
+      <th>Centre</th>
+      <th>Version</th>
+      <th>Date issued</th>
+      <th>Issued</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let issue of issues$ | async">
+      <td>{{issue.exam}}</td>
+      <td>{{issue.centre}}</td>
+      <td>{{issue.version}}</td>
+      <td>{{issue.dateIssued}}</td>
+      <td>{{issue.issued}}</td>
+    </tr>
+
+  </tbody>
+</table>

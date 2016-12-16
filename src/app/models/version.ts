@@ -1,4 +1,5 @@
 export interface IVersion {
+  $key?: string;
   title: string;
 }
 

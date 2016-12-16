@@ -1,6 +1,6 @@
 import { IVersion, Version } from './../models/version';
 import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -10,21 +10,21 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class VersionManagerComponent implements OnInit {
 
+  @Output() createItem = new EventEmitter(false);
+  title: string = '';
   items: any[];
+  newItem: IVersion;
   private versions$: FirebaseListObservable<IVersion[]>;
 
-  constructor(private af: AngularFire) { 
-   this.versions$ = af.database.list('/versions'); 
-   console.log(this.versions$);  
+  constructor(private af: AngularFire) {
+    this.versions$ = af.database.list('/versions');
   }
 
   ngOnInit() {
-       
+
   }
 
-  addItem(item: string): firebase.Promise<any> {
-    return this.versions$.push(new Version(item));
-    
-  }
 
 }
+
+

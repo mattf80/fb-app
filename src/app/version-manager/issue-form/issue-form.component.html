@@ -1,0 +1,27 @@
+
+  <form novalidate (ngSubmit)="onSubmit()" #form="ngForm">
+        <div class="form-group">
+      <input type="text" class="form-control" [(ngModel)]="newIssue.centre" #centre="ngModel" (keyup.escape)="clear()" autofocus name="centre" placeholder="centre"
+        required>
+    </div>
+
+    <div class="form-group">
+      <input type="text" class="form-control" [(ngModel)]="newIssue.exam" #exam="ngModel" (keyup.escape)="clear()" autofocus name="exam" placeholder="exam"
+        required>
+    </div>
+
+    <div class="form-group">
+      <input type="text" class="form-control" [(ngModel)]="newIssue.version" #version="ngModel" (keyup.escape)="clear()"  name="version" placeholder="version"
+        required>
+    </div>
+        <div class="form-group">
+      <input type="text" class="form-control" [(ngModel)]="newIssue.dateIssued" #dateIssued="ngModel" (keyup.escape)="clear()"  name="dateIssued" placeholder="date issued"
+        required>
+    </div>
+
+    <div class="form-group">
+      <input type="checkbox" class="form-control" [(ngModel)]="newIssue.issued" #issued="ngModel" name="issued">
+    </div>
+
+    <button class="btn btn-primary" type="submit" [disabled]="!form.valid" >Submit</button>
+  </form>

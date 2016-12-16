@@ -1,8 +1,13 @@
-<h1>If you're authenticated you should see a list of exams below. If you're not you should never reach this page.</h1>
+<h3>If you're authenticated you should see a list of exams below. If you're not you should never reach this page.</h3>
 
-<ul>
-  <li *ngFor="let item of versions$ | async">{{item.$value}}</li>
-</ul>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="col-sm-6">
+      <issue-form></issue-form>
+    </div>
+  </div>
 
-<button (click)="addItem('foo')">Add foo</button>
-
+  <div class="col-sm-12">
+    <issue-list></issue-list>
+  </div>
+</div>
